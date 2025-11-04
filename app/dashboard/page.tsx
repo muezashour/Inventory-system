@@ -3,6 +3,7 @@ import SideBar from "@/component/SideBar";
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { TrendingUp } from "lucide-react";
+import type { Product } from "@prisma/client";
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();
@@ -19,7 +20,7 @@ export default async function DashboardPage() {
     }),
     prisma.product.findMany({
       where: { userId },
-      select: { price: true, quantity: true, createdAt: true },
+      
     }),
   ]);
   const now = new Date();
@@ -38,7 +39,7 @@ export default async function DashboardPage() {
       2,
       "0"
     )}/${String(weekStart.getDate()).padStart(2, "0")}`;
-    const weekProducts = allProducts.filter((product) => {
+    const weekProducts = allProducts.filter((product: Product ) => {
       const productDate = new Date(product.createdAt);
       return productDate >= weekStart && productDate <= weekEnd;
     });

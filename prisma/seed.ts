@@ -1,7 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 
-
-
 const prisma = new PrismaClient();
 
 async function main() {
@@ -20,7 +18,6 @@ async function main() {
     console.log("Seed data created successfully!");
 console.log( `Created 25 products for user ID: ${demoUserId}`);
 }
-
 
 
 main()
