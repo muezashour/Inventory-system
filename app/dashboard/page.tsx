@@ -20,7 +20,7 @@ export default async function DashboardPage() {
     }),
     prisma.product.findMany({
       where: { userId },
-      
+
     }),
   ]);
   const now = new Date();
