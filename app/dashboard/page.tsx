@@ -7,7 +7,7 @@ import { TrendingUp } from "lucide-react";
 export default async function DashboardPage() {
   const user = await getCurrentUser();
   const userId = user.id;
-  
+
   const [totalProducts, lowStockProducts, allProducts] = await Promise.all([
     prisma.product.count({ where: { userId } }),
     prisma.product.count({
