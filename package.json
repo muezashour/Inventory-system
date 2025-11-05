@@ -31,6 +31,9 @@
     "typescript": "^5"
   },
   "prisma": {
-    "binaryTargets": ["native", "rhel-openssl-3.0.x"]
+    "binaryTargets": [
+      "native",
+      "rhel-openssl-3.0.x"
+    ]
   }
 }
