@@ -32,7 +32,7 @@ export async function CreatProduct(formData: FormData) {
     price: formData.get("price"),
     quantity: formData.get("quantity"),
     sku: formData.get("sku") || undefined,
-    lowStockAt: formData.get("LowstoclAtm") || undefined,
+    lowStockAt: formData.get("LowstoclAt") || undefined,
   });
   if (!parsed.success) {
     throw new Error("Invalid form data");
